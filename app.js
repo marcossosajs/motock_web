@@ -6,3 +6,4 @@ const puerto = process.env.PORT;
 app.listen(puerto, ()=>{
     console.log(`server escuchando en puerto ${puerto}`);
 });
+console.log("kajsdk");

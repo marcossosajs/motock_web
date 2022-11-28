@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="tituloWeb">Titulo</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/slider.css">
-    <script src="/js/slider.js"></script>
-    <script src="/js/god.js"></script>
+
 </head>
+
 <body>
     <nav class="nav">
-        <div class="nav__container"> 
-            
+        <div class="nav__container">
+
             <h1 class="nav__logo">
                 <img src="/imgs/logo1.png">
                 Motock
@@ -23,8 +25,8 @@
             </label>
             <input type="checkbox" name="" id="menu" class="nav__input">
             <ul class="nav__menu">
-                <li class="nav__item"><a id="inicio_nav" href="/Inicio" >Inicio</a></li>
-                <li class="nav__item"><a id="motos_nav" href="/Motos" >Motos</a>
+                <li class="nav__item"><a id="inicio_nav" href="#">Inicio</a></li>
+                <li class="nav__item"><a id="motos_nav" href="#">Motos</a>
                     <!--<ul>
                         <li><a id="nav_euromot"href="/Motos/euromot" class="sub_menu">Euromot</a></li>
                         <li><a id="nav_haojue"href="/Motos/haojue" class="sub_menu">haojue</a></li>
@@ -34,30 +36,34 @@
                         <li><a id="nav_descargar"href="/Motos/descargar_catalogo" class="sub_menu">Descargar Catalogo</a></li>
                     </ul>-->
                 </li>
-                <li class="nav__item"><a id="cotizacion_nav" href="/Cotizacion" >Cotizacion</a></li>
-                <li class="nav__item"><a id="contacto_nav" href="/Contacto" >Contacto</a></li>
+                <li class="nav__item"><a id="cotizacion_nav" href="#">Cotizacion</a></li>
+                <li class="nav__item"><a id="contacto_nav" href="#">Contacto</a></li>
+                <li class="nav__item"><a id="entrar_nav" href="#">Entrar</a></li>
             </ul>
         </div>
     </nav>
     <div id="wrapper" class="wrapper">
-        
+
     </div>
+
+    <div id="containerSlider" class="container_slider">
+        <div class="slider" id="slider">
+            <div class="slider__section">
+                <img src="/imgs/slider/001-1.png" alt="" class="slider__img">
+            </div>
+            <div class="slider__section">
+                <img src="/imgs/slider/002-1.png" alt="" class="slider__img">
+            </div>
+            <div class="slider__section">
+                <img src="/imgs/slider/003.png" alt="" class="slider__img">
+            </div>
+        </div>
+        <div class="slider__btn slider__btn--right">&#62;</div>
+        <div class="slider__btn slider__btn--left">&#60;</div>
+    </div>
+
+    <footer>Todos los derechos reservados - Motock 2022 v1.0</footer>
 </body>
+<script src="/js/code.js"></script>
 
 </html>
-<div class="container_slider">
-    <div class="slider" id="slider">
-        <div class="slider__section">
-            <img src="/imgs/slider/001-1.png" alt="" class="slider__img">
-        </div>
-        <div class="slider__section">
-            <img src="/imgs/slider/002-1.png" alt="" class="slider__img">
-        </div>
-        <div class="slider__section">
-            <img src="/imgs/slider/003.png" alt="" class="slider__img">
-        </div>
-    </div>
-    <div class="slider__btn slider__btn--right">&#62;</div>
-    <div class="slider__btn slider__btn--left">&#60;</div>
-</div>
-<footer>Todos los derechos reservados - Motock 2022 v1.0</footer>

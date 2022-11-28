@@ -1,7 +1,7 @@
 .container_slider{
+    margin-top: 0;
     width: 100%;
     max-width: 100%;
-    margin: auto;
     overflow: hidden;
     position: relative;
 }
@@ -11,7 +11,7 @@
     height: auto;
 }
 .slider__section{
-
+    color:aliceblue;
 }
 .slider__img{
     display: block;
@@ -33,7 +33,7 @@
     cursor: pointer;  
 }
 .slider__btn:hover{
-
+    color:aliceblue;
 }
 .slider__btn--left{
 

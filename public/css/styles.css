@@ -1,12 +1,15 @@
 @font-face {
     font-family: 'Bevietnam_regular';
-    src: url('fonts/BeVietnamPro-Regular.ttf') format('truetype');
+    src: url('../fonts/BeVietnamPro-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
   } 
 *{
     margin:0px;
     padding: 0px;
+}
+.hidden{
+    display: none;
 }
 ul li{
     list-style: none;

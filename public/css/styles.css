@@ -8,6 +8,39 @@
     margin:0px;
     padding: 0px;
 }
+/* Clases de las motos Top Indice */
+.itemTopMotos{
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    padding: 13px;
+    border: #3b2c2c 1px solid;
+    margin: 10px;
+    align-items: center;
+    border-radius: 10px;
+}
+.botonComprarMoto{
+    width: 100px;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    outline: auto;
+    background: black;
+    color: white;
+}
+
+.moto-img{
+    width: 200px;
+    height: 200px;
+}
+.contenedor-motos{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* terminan las clases de motos Top */
 .hidden{
     display: none;
 }

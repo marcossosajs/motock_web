@@ -25,9 +25,14 @@
     color: black;
     position: absolute;
     margin-top: 33px;
-    margin-left: -243px;
+    margin-left: -302px;
     flex-flow: column;
 }
+.subMenuLogin form input[type=button]{
+    padding: 2px 10px 2px 10px;
+    border-radius: 10px;
+}
+
 /* Clases de las motos Top Indice */
 .itemTopMotos{
     display: flex;
@@ -84,6 +89,8 @@ ul li{
     background: black;
     height: 80px;
     color: white;
+    position: fixed;
+    width: 100%;
 }
 .nav__logo{
     font-size: 1.5em;

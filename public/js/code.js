@@ -34,11 +34,7 @@ const fetchHome = () => {
                 let precio = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'CLP' }).format(JsonTopMotos[id].precio);
                 let cilindrada = JsonTopMotos[id].cilindrada;
                 let objMotos = new GeneradorDeMotos(id, marca, modelo, cilindrada, precio, img_, idProduct);
-                objMotos.crear();/*
-                ret = document.querySelector(".botonComprarMoto");
-                ret.addEventListener("click", ()=>{
-                    console.log("click");
-                })*/
+                objMotos.crear();
 
             }
             contenedorMotos = document.querySelector(".contenedor-motos");
@@ -101,7 +97,8 @@ fetchHome();
 
 //menu
 
-motosNav.addEventListener("click", () => {
+motosNav.addEventListener("click", (e) => {
+    e.preventDefault();
     subMenuMotos.classList.toggle("hidden");
     subMenuLogin.classList.add("hidden");
 });
@@ -111,14 +108,15 @@ subMenuMotos.addEventListener("mouseover", () => {
         subMenuMotos.classList.add("hidden");
     })
 })
-entrarNav.addEventListener("click", () => {
+entrarNav.addEventListener("click", (e) => {
+    e.preventDefault();
     subMenuLogin.classList.toggle("hidden");
     subMenuMotos.classList.add("hidden");
 });
 subMenuLogin.addEventListener("mouseover", () => {
     subMenuLogin.classList.remove("hidden");
     subMenuLogin.addEventListener("mouseout", () => {
-        subMenuLogin.classList.add("hidden");
+            subMenuLogin.classList.add("hidden");
     })
 })
 

@@ -23,7 +23,7 @@ app.get('/*', (req, res) => {
 app.post('/topMotos', async (req, res) => {
     try {
         if (req.body.topMotos === "si" ){
-            const motos = await Moto.find({electricidad: "no"})
+            const motos = await Moto.find({})
             res.send(motos);
         }
 

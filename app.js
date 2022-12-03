@@ -15,15 +15,11 @@ const { response } = require('express');
 const puerto = process.env.PORT;
 /* usando puerto con variables de entorno .env*/
 app.use(express.json());
+app.use(express.static(__dirname + "/public"));
+app.get('/*', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
 
-app.get('/', (req, res) => {
-    const request = req.body;
-    res.sendFile(__dirname + '/public/index.html');
-});
-app.get('/s', (req, res) => {
-    const request = req.body;
-    res.sendFile(__dirname + '/public/index.html');
-});
 app.post('/topMotos', async (req, res) => {
     try {
         if (req.body.topMotos === "si" ){
@@ -37,7 +33,7 @@ app.post('/topMotos', async (req, res) => {
 
 
 });
-app.use(express.static(__dirname + "/public"));
+
 /* diciendole a express que mis archivos estaticos estan en public 
 y que por ende, desde ahi sea el "/" inicio cuando busque
 por defecto agarra el index.html como inicio*/

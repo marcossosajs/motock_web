@@ -8,13 +8,6 @@ const inicioNav = document.getElementById("inicio_nav");
 const fragmentos = document.createDocumentFragment();
 const contenedorHome = document.querySelector(".wrapper");
 
-
-
-
-var returnFech;
-var ret;
-
-
 const fetchHome = () => {
     fetch("/topMotos", {
         method: "POST",
@@ -81,8 +74,8 @@ class GeneradorDeMotos {
         divMoto.classList.add(`itemTopMotos`);
         divMoto.innerHTML = `
         <img src='/imgs/motos${this.img}' class="item-img${this.id} moto-img"></div>
-        <h2>Marca:<b>${this.marca}</b></h2>
-        <h2>Modelo:<b>${this.modelo}</b></h2>
+        <h2><b>${this.marca[0].toUpperCase()+this.marca.substring(1)}</b></h2>
+        <h2><b>${this.modelo[0].toUpperCase()+this.modelo.substring(1)}</b></h2>
         <p>Cilindrada: <b>${this.cilindrada}</b></p>
         <p>Precio: <b>$${this.precio}</b></p>
         `;
@@ -91,7 +84,11 @@ class GeneradorDeMotos {
         ret.addEventListener("click", ()=>{
             console.log("click");
             console.log(retHidden.value);
-        })
+            history.pushState(null, "", `/motos/${this.marca}/${this.modelo}`);
+            document.querySelector(".contenedor-motos").remove();
+            document.querySelector(".container_slider").remove();
+            
+        });
         fragmentos.append(divMoto);
     }
 }

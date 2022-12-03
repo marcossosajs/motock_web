@@ -19,13 +19,20 @@
     align-items: center;
     border-radius: 10px;
 }
+.itemTopMotos:hover{
+    background-color: #B6001E;
+    color: white;
+    transition: all 1s;
+    cursor: pointer;
+}
 .botonComprarMoto{
     width: 100px;
     padding: 10px;
     border-radius: 12px;
     margin-top: 10px;
     cursor: pointer;
-    outline: auto;
+    outline: none;
+    border:1px black;
     background: black;
     color: white;
 }

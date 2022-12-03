@@ -8,6 +8,26 @@
     margin:0px;
     padding: 0px;
 }
+/* clases para el menu */
+.categoriasMotos{
+    display: flex;
+    background: #1A1A1A;
+    padding: 10px;
+    color: black;
+    position: absolute;
+    margin-top: 33px;
+    flex-flow: column;
+}
+.subMenuLogin{
+    display: flex;
+    background: #1A1A1A;
+    padding: 10px;
+    color: black;
+    position: absolute;
+    margin-top: 33px;
+    margin-left: -243px;
+    flex-flow: column;
+}
 /* Clases de las motos Top Indice */
 .itemTopMotos{
     display: flex;

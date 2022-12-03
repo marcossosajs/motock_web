@@ -27,18 +27,27 @@
             <ul class="nav__menu">
                 <li class="nav__item"><a id="inicio_nav" href="#">Inicio</a></li>
                 <li class="nav__item"><a id="motos_nav" href="#">Motos</a>
-                    <!--<ul>
+                    <ul id="subMenuCategoriasMotos" class="categoriasMotos hidden">
                         <li><a id="nav_euromot"href="/Motos/euromot" class="sub_menu">Euromot</a></li>
-                        <li><a id="nav_haojue"href="/Motos/haojue" class="sub_menu">haojue</a></li>
+                        <li><a id="nav_haojue"href="/Motos/haojue" class="sub_menu">Haojue</a></li>
                         <li><a id="nav_kayo"href="/Motos/kayo" class="sub_menu">Kayo</a></li>
                         <li><a id="nav_lifan"href="/Motos/lifan" class="sub_menu">Lifan</a></li>
                         <li><a id="nav_bajaj"href="/Motos/bajaj" class="sub_menu">Bajaj</a></li>
+                        <li><a id="nav_bajaj"href="/Motos/bajaj" class="sub_menu">Yamaha</a></li>
                         <li><a id="nav_descargar"href="/Motos/descargar_catalogo" class="sub_menu">Descargar Catalogo</a></li>
-                    </ul>-->
+                    </ul>
                 </li>
                 <li class="nav__item"><a id="cotizacion_nav" href="#">Cotizacion</a></li>
                 <li class="nav__item"><a id="contacto_nav" href="#">Contacto</a></li>
-                <li class="nav__item"><a id="entrar_nav" href="#">Entrar</a></li>
+                <li class="nav__item"><a id="entrar_nav" href="#">Entrar</a>
+                    <ul id="subMenuLogin" class="subMenuLogin hidden">
+                        <form id="formLoginNav">
+                            <input type="text" placeholder="User" value="">
+                            <input type="password" placeholder="Password" value="">
+                            <input type="button" value="Login">
+                        </form>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

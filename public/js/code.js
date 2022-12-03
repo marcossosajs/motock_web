@@ -1,6 +1,9 @@
 const windowPatch = window.location.pathname;
 console.log(windowPatch);
 //botones del menu en constantes//
+const subMenuMotos = document.querySelector("#subMenuCategoriasMotos");
+const subMenuLogin = document.querySelector("#subMenuLogin");
+const entrarNav = document.getElementById("entrar_nav");
 const contactoNav = document.getElementById("contacto_nav");
 const cotizacionNav = document.getElementById("cotizacion_nav");
 const motosNav = document.getElementById("motos_nav");
@@ -63,31 +66,31 @@ class GeneradorDeMotos {
         let ret = document.createElement("INPUT");
         ret.classList.add("botonComprarMoto");
         ret.setAttribute("type", "button");
-        ret.value="Comprar";
+        ret.value = "Comprar";
         let retHidden = document.createElement("INPUT");
         retHidden.classList.add("buttonHidden");
         retHidden.setAttribute("type", "hidden");
-        retHidden.value= this.idProduct;
+        retHidden.value = this.idProduct;
         let form1 = document.createElement("FORM");
         form1.classList.add("formComprarMoto");
-        form1.id=`form_moto${this.id}`;
+        form1.id = `form_moto${this.id}`;
         divMoto.classList.add(`itemTopMotos`);
         divMoto.innerHTML = `
         <img src='/imgs/motos${this.img}' class="item-img${this.id} moto-img"></div>
-        <h2><b>${this.marca[0].toUpperCase()+this.marca.substring(1)}</b></h2>
-        <h2><b>${this.modelo[0].toUpperCase()+this.modelo.substring(1)}</b></h2>
+        <h2><b>${this.marca[0].toUpperCase() + this.marca.substring(1)}</b></h2>
+        <h2><b>${this.modelo[0].toUpperCase() + this.modelo.substring(1)}</b></h2>
         <p>Cilindrada: <b>${this.cilindrada}</b></p>
         <p>Precio: <b>$${this.precio}</b></p>
         `;
         divMoto.append(form1);
-        form1.append(ret,retHidden);
-        ret.addEventListener("click", ()=>{
+        form1.append(ret, retHidden);
+        ret.addEventListener("click", () => {
             console.log("click");
             console.log(retHidden.value);
             history.pushState(null, "", `/motos/${this.marca}/${this.modelo}`);
             document.querySelector(".contenedor-motos").remove();
             document.querySelector(".container_slider").remove();
-            
+
         });
         fragmentos.append(divMoto);
     }
@@ -96,7 +99,28 @@ fetchHome();
 
 
 
+//menu
 
+motosNav.addEventListener("click", () => {
+    subMenuMotos.classList.toggle("hidden");
+    subMenuLogin.classList.add("hidden");
+});
+subMenuMotos.addEventListener("mouseover", () => {
+    subMenuMotos.classList.remove("hidden");
+    subMenuMotos.addEventListener("mouseout", () => {
+        subMenuMotos.classList.add("hidden");
+    })
+})
+entrarNav.addEventListener("click", () => {
+    subMenuLogin.classList.toggle("hidden");
+    subMenuMotos.classList.add("hidden");
+});
+subMenuLogin.addEventListener("mouseover", () => {
+    subMenuLogin.classList.remove("hidden");
+    subMenuLogin.addEventListener("mouseout", () => {
+        subMenuLogin.classList.add("hidden");
+    })
+})
 
 
 

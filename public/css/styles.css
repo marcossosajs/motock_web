@@ -15,16 +15,19 @@
     padding: 10px;
     color: black;
     position: absolute;
-    margin-top: 33px;
+    margin-top: 18px;
     flex-flow: column;
+}.categoriasMotos li{
+    margin:10px 0px 10px 0px;
 }
+
 .subMenuLogin{
     display: flex;
     background: #1A1A1A;
     padding: 10px;
     color: black;
     position: absolute;
-    margin-top: 33px;
+    margin-top: 18px;
     margin-left: -302px;
     flex-flow: column;
 }
@@ -87,7 +90,7 @@ ul li{
 .nav{
     z-index: 2;
     background: black;
-    height: 80px;
+    height: 50px;
     color: white;
     position: fixed;
     width: 100%;
@@ -120,6 +123,14 @@ ul li{
     text-decoration: none;
     --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
     
+}
+.nav__item a:hover{
+    color:#AB001C;
+    transition: all 0.5s;
+}
+.nav__item img{
+    color: #ffffff;
+
 }
 .nav__item::after{
     content: "";

@@ -10,7 +10,8 @@ const motosNav = document.getElementById("motos_nav");
 const inicioNav = document.getElementById("inicio_nav");
 const fragmentos = document.createDocumentFragment();
 const contenedorHome = document.querySelector(".wrapper");
-
+var jsonMotoSelect;
+var clickMoto = false;
 const fetchHome = () => {
     fetch("/topMotos", {
         method: "POST",
@@ -28,7 +29,7 @@ const fetchHome = () => {
                 console.log("entro en bucle");
                 let id = i;
                 let idProduct = JsonTopMotos[id]._id;
-                let img_ = JsonTopMotos[id].img;
+                let img_ = JsonTopMotos[id].img_preview;
                 let marca = JsonTopMotos[id].marca;
                 let modelo = JsonTopMotos[id].modelo;
                 let precio = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'CLP' }).format(JsonTopMotos[id].precio);
@@ -86,12 +87,31 @@ class GeneradorDeMotos {
             history.pushState(null, "", `/motos/${this.marca}/${this.modelo}`);
             document.querySelector(".contenedor-motos").remove();
             document.querySelector(".container_slider").remove();
+            fetch("/topMotoSelect", {
+                method: "POST",
+                body: `{"findMotoMarca": "${this.marca}", "findMotoModelo": "${this.modelo}"}`,
+                headers: { "content-type": "application/json" }
+            })
+            .then(res=>res.json())
+            .then(res => {
+                clickMoto = true;
+                jsonMotoSelect = res;
+                let divMotoSelect = document.createElement("DIV");
+                divMotoSelect.classList.add("motoTopSelect");
+                divMotoSelect.innerHTML = jsonMotoSelect[0].marca;
+                contenedorHome.append(divMotoSelect);
+            })
 
         });
         fragmentos.append(divMoto);
     }
 }
-fetchHome();
+if (windowPatch == "/"){
+    clickMoto = false;
+    fetchHome();
+
+}
+
 
 
 

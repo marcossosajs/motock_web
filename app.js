@@ -33,7 +33,23 @@ app.post('/topMotos', async (req, res) => {
 
 
 });
+app.post('/topMotoSelect', async (req, res) => {
+    console.log("se hizo en topmotoselect")
+    console.log(req.body.findMotoMarca + "/b" + req.body.findMotoModelo);
+    try {
+        console.log("entro en el try");
+            const findMarca = req.body.findMotoMarca;
+            const findModelo = req.body.findMotoModelo;
+            const moto = await Moto.find({marca: findMarca, modelo : findModelo})
+            console.log(moto);
+            res.send(moto);
+        }
+     catch (error) {
+        console.log(error);
+    }
 
+
+});
 /* diciendole a express que mis archivos estaticos estan en public 
 y que por ende, desde ahi sea el "/" inicio cuando busque
 por defecto agarra el index.html como inicio*/

@@ -16,7 +16,11 @@ const motoScheme = new Schema({
         suspensiondelantera: String,
         suspensiontrasera: String,
         top: Boolean,
-        electricidad: String 
+        electricidad: String,
+        fotos : Array,
+        disponible: Boolean,
+        img_preview: String
+
     });
 
 const Moto = mongoose.model('Moto', motoScheme)
